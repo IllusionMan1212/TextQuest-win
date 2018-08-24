@@ -1,4 +1,5 @@
 Program TextQuest;
+{$APPTYPE GUI}
 uses winCrt, graph;
 var choice : char;
     drankpotion, havesword, killedslug, haveflower, killedDragon : integer;
@@ -29,10 +30,6 @@ procedure savedprincess1;
 begin
         cleardevice;
 		setcolor(white);
-		//psvDebugScreenSetFgColor(COLOR_WHITE);
-		writeln();
-		writeln();
-		writeln();
   		outtextxy(10, 20,'                                      ///........./|\\.........\\\  ');
   		outtextxy(10, 30,'                                     ////    :    |||    :    \\\\ ');
   		outtextxy(10, 40,'                                     \\'''''''''''':''''''''|||'''''''':''''''''''''//  ');
@@ -44,7 +41,6 @@ begin
   		outtextxy(10, 100,'                                           ''\\\\\\|||//////''  ');
   		outtextxy(10, 110,'                                             ''\\\\\|/////''     ');
 		setcolor(yellow);
-  		//psvDebugScreenSetFgColor(COLOR_YELLOW);
   		outtextxy(10, 120,'                                        .:::::::::::::::::::::.   ');
   		outtextxy(10, 130,'                                      .::::::::''''''''''''''''''::::::::.   ');
   		outtextxy(10, 140,'                                    .::::::''''              ''''::::::.  ');
@@ -64,7 +60,6 @@ begin
   		outtextxy(10, 280,'                                         ''::::::::::::::::::::''   ');
   		outtextxy(10, 290,'                                            ''''::::::::::::''''      ');
 		setcolor(green);
-		//psvDebugScreenSetFgColor(COLOR_GREEN);
 		outtextxy(10, 300,'You have saved princess April.');
 		Delay(5000);
 		outtextxy(10, 310,'You marry her and live happily ever after.');
@@ -74,18 +69,13 @@ begin
 		outtextxy(10, 330,'THE END.');
 		Delay(5000);
 		setcolor(white);
-		//psvDebugScreenSetFgColor(COLOR_WHITE);
-		halt;
+		closegraph;
 end;
 
 procedure dead;
 	begin
 	    cleardevice;
 		setcolor(8);
-		//psvDebugScreenSetFgColor(COLOR_GREY);
-		writeln();
-		writeln();
-		writeln();
 		outtextxy(10, 20,'                                           /''       ');
 		outtextxy(10, 30,'                                           ||       ');
 		outtextxy(10, 40,'                                           ||      ***       ');
@@ -108,10 +98,6 @@ procedure dead;
 		outtextxy(10, 210,'                                               \_| >(_/        \,/       ');
 		outtextxy(10, 220,'                                            ,//__o\ /__//,      V        ');
 		setcolor(red);
-		//psvDebugScreenSetFgColor(COLOR_RED);
-		writeln();
-		writeln();
-		writeln();
 		outtextxy(10, 260,'You have died on your quest.');
 		Delay(5000);
 		outtextxy(10, 270,'For your bravery, the king erects a statue in the town centre.');
@@ -119,15 +105,13 @@ procedure dead;
 		outtextxy(10, 280,'You will be remembered until a better knight comes along.');
 		Delay(5000);
 		setcolor(white);
-		//psvDebugScreenSetFgColor(COLOR_WHITE);
-		halt;
+		closegraph;
 	end;
 
 procedure coward;
 	  begin
 		cleardevice;
 		setcolor(8); 
-		//psvDebugScreenSetFgColor(COLOR_GREY);
      	outtextxy(10, 20,'                                                        ._--+.                         ');
      	outtextxy(10, 30,'                                                     -''''      ''.                         ');
      	outtextxy(10, 40,'                                                  +:''           ''.                       ');
@@ -164,8 +148,6 @@ procedure coward;
      	outtextxy(10, 350,'                              :         :  \\ |  .-''   .''          .\\    _-''                  ');
         outtextxy(10, 360,'                               ''''''''''''''''''''''''''''''''''''''''''''''''              ''''''''''        ');
 		setcolor(RED);
-		//psvDebugScreenSetFgColor(COLOR_RED);
-		writeln();
 		outtextxy(10, 380,'You run away from your quest like a coward.');
 		Delay(5000);
 		outtextxy(10, 390,'As you run away, you hear the sound of the princess being eaten by the dragon.');
@@ -174,7 +156,6 @@ procedure coward;
 		Delay(5000);
 		outtextxy(10, 410,'The rest of your days are spent rotting in the dungeons.');
 		setcolor(white);
-		//psvDebugScreenSetFgColor(COLOR_WHITE);
 		Delay(4000);
 		closegraph;
 		end;
@@ -182,11 +163,7 @@ procedure coward;
 procedure location1;
 begin
     cleardevice;
-	writeln();
-	writeln();
-	writeln();
 	setcolor(8);
-	//psvDebugScreenSetFgColor(COLOR_GREY);
  	outtextxy(10, 20,'                                     /   \\              /''\\       _                               ');
  	outtextxy(10, 30,'                \\_..           /''.,/     \\_         .,''   \\     / \\_                             ');
  	outtextxy(10, 40,'                    \\         /            \\      _/       \\_  /    \\     _                      ');
@@ -208,8 +185,6 @@ begin
  	outtextxy(10, 200,'                                                                   |      \\     \\     \\      \\   ');
  	outtextxy(10, 210,'                                                                    \\            |            \\  ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 230,'You see the entrance to the dragon''s lair to the north.');
 	outtextxy(10, 240,'You hear the princess yelling, "Help me! Help me!"');
 	outtextxy(10, 250,'You hear the bellow of the dragon.');
@@ -238,11 +213,7 @@ end;
 procedure location2;
 begin
     cleardevice;
-	writeln();
-	writeln();
-	writeln();
 	setcolor(8);
-	//psvDebugScreenSetFgColor(COLOR_GREY);
 	outtextxy(10, 20,'                             _______               ______________      ___      _______');
 	outtextxy(10, 30,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
 	outtextxy(10, 40,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -264,8 +235,6 @@ begin
 	outtextxy(10, 200,'                            |____|__|//////                               |\\\\\\\\|__|____|');
 	outtextxy(10, 210,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 230,'You are inside the dragon''s burned fortress lair.');
 	outtextxy(10, 240,'The heat is opressive and the stench of brimstone burns your nostrils.');
 	outtextxy(10, 250,'You see a door leading west, a door leading east, and a door leading south.');
@@ -299,9 +268,6 @@ begin
 
 procedure location3;
 begin
-    writeln();
-	writeln();
-	writeln();
 	outtextxy(10,340,'It''s very dark in this room.');
 	Delay(5000);
 	outtextxy(10, 350,'You cannot see a thing.');
@@ -320,11 +286,7 @@ end;
 procedure location4;
 begin
     cleardevice;
-	writeln();
-	writeln();
-	writeln();
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
  	outtextxy(10, 20,'                                           \_______/        ');
  	outtextxy(10, 30,'                                       `.,-''\_____/`-.,''      ');
  	outtextxy(10, 40,'                                        /`..''\ _ /`.,'' \      ');
@@ -336,9 +298,7 @@ begin
  	outtextxy(10, 100,'                                       ,''`-./______\,-''`.          ');
  	outtextxy(10, 110,'                                           /        \       ');
 	setcolor(white);
- 	//psvDebugScreenSetFgColor(COLOR_WHITE);
 	setcolor(8);
- 	//psvDebugScreenSetFgColor(COLOR_GREY);
 	outtextxy(10, 120,'                             _______               ______________      ___      _______');
 	outtextxy(10, 130,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
 	outtextxy(10, 140,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -360,8 +320,6 @@ begin
 	outtextxy(10, 300,'                            |____|__|//////                               |\\\\\\\\|__|____|');
 	outtextxy(10, 310,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 330,'You are standing in a room covered in spider webs.');
 	outtextxy(10, 340,'There are  doors leading west, north, and east.');
 	outtextxy(10, 350,'What do you do?');
@@ -397,10 +355,6 @@ begin
   if (drankpotion <> 1) then
   begin
     setcolor(green);
-	//psvDebugScreenSetFgColor(COLOR_GREEN);
-	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 20,'                                                       _____     ');
 	outtextxy(10, 30,'                                                      `.___,''     ');
 	outtextxy(10, 40,'                                                       (___)     ');
@@ -415,20 +369,12 @@ begin
 	outtextxy(10, 130,'                                                     \       /     ');
 	outtextxy(10, 140,'                                                      `.___.''     ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 160,'You are in a room with a table.');
 	outtextxy(10, 170,'On the table you can see a bottle that appears to be a potion.');
   end
   else
   begin
     setcolor(8);
-	//psvDebugScreenSetFgColor(COLOR_GREY);
-	writeln();
-	writeln();
-	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 20,'                                                        ___      ');
 	outtextxy(10, 30,'                                                       <   >     ');
 	outtextxy(10, 40,'                                                        ) (     ');
@@ -441,15 +387,9 @@ begin
 	outtextxy(10, 110,'                                                     \       /     ');
 	outtextxy(10, 120,'                                                      `.___.''     ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 140,'You are in a room with an empty potion bottle.');
   end;
   setcolor(8);
-  //psvDebugScreenSetFgColor(COLOR_GREY);
-  writeln();
-  writeln();
-  writeln();
   outtextxy(10, 190,'                             _______               ______________      ___      _______');
   outtextxy(10, 200,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
   outtextxy(10, 210,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -471,8 +411,6 @@ begin
   outtextxy(10, 370,'                            |____|__|//////                               |\\\\\\\\|__|____|');
   outtextxy(10, 380,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
   setcolor(white);
-  //psvDebugScreenSetFgColor(COLOR_WHITE);
-  writeln();
   outtextxy(10, 400,'There is a door to the west.');
   outtextxy(10, 410,'What do you do?');
   outtextxy(10, 420,'X - Go west.');
@@ -502,16 +440,12 @@ begin
 		repeat
 	     if (drankpotion <> 1) then
 		   begin
-		    writeln();
 			setcolor(red);
-			//psvDebugScreenSetFgColor(COLOR_RED);
 			outtextxy(10, 450,'Yuck! It does not taste good. You wonder what will happen...');
 			Delay(5000);
 			setcolor(green);
-			//psvDebugScreenSetFgColor(COLOR_GREEN);
 			outtextxy(10, 460,'Suddenly you feel much stronger!');
 			setcolor(white);
-			//psvDebugScreenSetFgColor(COLOR_WHITE);
 			drankPotion := 1;
 		   Moveto(10,470);
 		   X := getX;
@@ -540,10 +474,6 @@ begin
   if (havesword <> 1) then
     begin
 	  setcolor(yellow);
-      //psvDebugScreenSetFgColor(COLOR_YELLOW);
-	  writeln();
-	  writeln();
-	  writeln();
   	  outtextxy(10, 20,'                                  (O)               ');
   	  outtextxy(10, 30,'                                  <M                ');
   	  outtextxy(10, 40,'                       o          <M                ');
@@ -553,8 +483,6 @@ begin
   	  outtextxy(10, 80,'                       o          <W                ');
   	  outtextxy(10, 90,'                                  <W                ');
   	  outtextxy(10, 100,'                                  (O)               ');
-	  //psvDebugScreenSetFgColor(COLOR_WHITE);
-	  writeln();
 	  outtextxy(10, 120,'You are in a room with a golden sword laying across a purple cloth draped over a table.');
     end
 	else
@@ -562,10 +490,6 @@ begin
 	  outtextxy(10, 70,'You are in a room with a purple cloth draped over a table.');
 	end;
   setcolor(8);
-  //psvDebugScreenSetFgColor(COLOR_GREY);
-  writeln();
-  writeln();
-  writeln();
   outtextxy(10, 160,'                             _______               ______________      ___      _______');
   outtextxy(10, 170,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
   outtextxy(10, 180,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -587,8 +511,6 @@ begin
   outtextxy(10, 340,'                            |____|__|//////                               |\\\\\\\\|__|____|');
   outtextxy(10, 350,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
   setcolor(white);
-  //psvDebugScreenSetFgColor(COLOR_WHITE);
-  writeln();
   outtextxy(10, 370,'There is a door to the east.');
   outtextxy(10, 380,'What do you do?');
   outtextxy(10, 390,'X - Go east.');
@@ -619,10 +541,8 @@ begin
 	      if (havesword <> 1) then
 		    begin
 			  setcolor(green);
-		      //psvDebugScreenSetFgColor(COLOR_GREEN);
 			  outtextxy(10, 420,'You pick up the sword and buff it with the cloth, placing the cloth back onto the table.');
 			  setcolor(white);
-			  //psvDebugScreenSetFgColor(COLOR_WHITE);
 			  haveSword := 1;
 			  Moveto(10, 430);
 	  		  X := getX;
@@ -651,10 +571,6 @@ begin
   if (killedslug <> 1) then
   begin
     setcolor(8);
-	//psvDebugScreenSetFgColor(COLOR_GREY);
-	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 20,'                                           ____                      ,         ');
 	outtextxy(10, 30,'                                          /---.''.__             ____//         ');
 	outtextxy(10, 40,'                                               ''--.\           /.---''         ');
@@ -674,8 +590,6 @@ begin
 	outtextxy(10, 180,'                                                                   \\         ');
 	outtextxy(10, 190,'                                                                    ''         ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 210,'You are in a musty room.');
 	outtextxy(10, 220,'On the ground, you see an unusually large spider.');
 	outtextxy(10, 230,'What do you do?');
@@ -687,11 +601,9 @@ begin
 	case (choice) of
 	#120, #88 : begin
 	        setcolor(red);
-	        //psvDebugScreenSetFgColor(COLOR_RED);
 			outtextxy(10, 270,'You cry out in fear and run away.');
 			outtextxy(10, 280,'From the distance you hear the princess yell out, "Do I have to save myself!?"');
 			setcolor(white);
-			//psvDebugScreenSetFgColor(COLOR_WHITE);
 			Moveto(10,290);
 			X := getX;
 			Y := getY;
@@ -700,10 +612,8 @@ begin
 	      end;
     #111, #79 : begin
 	        setcolor(green);
-	        //psvDebugScreenSetFgColor(COLOR_GREEN);
 			outtextxy(10, 270,'You get bug guts on your boots as you crush the spider with a violent stomp.');
 			setcolor(white);
-			//psvDebugScreenSetFgColor(COLOR_WHITE);
 			killedSlug := 1;
 			Moveto(10, 280);
 			X := getX;
@@ -717,10 +627,6 @@ begin
   else
   begin
     setcolor(8);
-    //psvDebugScreenSetFgColor(COLOR_GREY);
-	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 20,'                             _______               ______________      ___      _______');
 	outtextxy(10, 30,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
 	outtextxy(10, 40,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -742,8 +648,6 @@ begin
 	outtextxy(10, 200,'                            |____|__|//////                               |\\\\\\\\|__|____|');
 	outtextxy(10, 210,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 230,'You are in a room with spider guts smeared on the floor.');
 	outtextxy(10, 240,'There is a door to the west and to the east.');
 	outtextxy(10, 250,'What do you do?');
@@ -773,10 +677,6 @@ procedure location8;
 begin
   cleardevice;
   setcolor(8);
-  //psvDebugScreenSetFgColor(COLOR_GREY);
-  writeln();
-  writeln();
-  writeln();
   outtextxy(10, 20,'                             _______               ______________      ___      _______');
   outtextxy(10, 30,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
   outtextxy(10, 40,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -798,8 +698,6 @@ begin
   outtextxy(10, 200,'                            |____|__|//////                               |\\\\\\\\|__|____|');
   outtextxy(10, 210,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
   setcolor(white);
-  //psvDebugScreenSetFgColor(COLOR_WHITE);
-  writeln();
   outtextxy(10, 230,'You are in an empty room. The walls feel as though they are emanating heat.');
   outtextxy(10, 240,'There is a  door to the west, north, east, and south.');
   outtextxy(10, 250,'What do you do?');
@@ -840,10 +738,6 @@ begin
   if (haveflower <> 1) then
   begin
     setcolor(yellow);
-    //psvDebugScreenSetFgColor(COLOR_YELLOW);
-	writeln();
-	writeln();
-	writeln();
   	outtextxy(10, 20,'                                           .-''`''-.       _.---.     ');
   	outtextxy(10, 30,'                                         .''        \    .''      ''.    ');
   	outtextxy(10, 40,'                                        /           \  /          \   ');
@@ -864,8 +758,6 @@ begin
   	outtextxy(10, 190,'                                                       `--`/`     ');
   	outtextxy(10, 200,'                                                          `              ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 220,'You are in a humid, musty room.');
 	outtextxy(10, 230,'On the ground, you see a single yellow flower growing.');
   end
@@ -874,10 +766,6 @@ begin
     outtextxy(10, 150,'You are in a humid, musty room. You see a patch of dirt where flowers once grew.');
   end;
   setcolor(8);
-  //psvDebugScreenSetFgColor(COLOR_GREY);
-  writeln();
-  writeln();
-  writeln();
   outtextxy(10, 240,'                             _______               ______________      ___      _______');
   outtextxy(10, 250,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
   outtextxy(10, 260,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -899,8 +787,6 @@ begin
   outtextxy(10, 420,'                            |____|__|//////                               |\\\\\\\\|__|____|');
   outtextxy(10, 430,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
   setcolor(white);
-  //psvDebugScreenSetFgColor(COLOR_WHITE);
-  writeln();
   outtextxy(10, 450,'There is a door to the west.');
   outtextxy(10, 460,'What do you do?');
   outtextxy(10, 470,'X - Go west.');
@@ -931,11 +817,9 @@ begin
   		if (haveflower <> 1) then
           begin
 		    setcolor(green);
-            //psvDebugScreenSetFgColor(COLOR_GREEN);
 			outtextxy(10, 500,'You pick the flower and place it in your chainmail.');
 			outtextxy(10, 510,'It smells subtle and sweet.');
 			setcolor(white);
-			//psvDebugScreenSetFgColor(COLOR_WHITE);
 			haveflower := 1;
 			Moveto(10, 520);
 			X := getX;
@@ -964,10 +848,6 @@ begin
   if (killedDragon <> 1) then
   begin
     setcolor(red);
-    //psvDebugScreenSetFgColor(COLOR_RED);
-	writeln();
-	writeln();
-	writeln();
   	outtextxy(10, 20,'                                                    .%%,       ');
   	outtextxy(10, 30,'                                                   X:-x\\'',       ');
   	outtextxy(10, 40,'                                                  X:/%%;::\\:X      ');
@@ -1000,8 +880,6 @@ begin
   	outtextxy(10, 310,'   kJP.Ql\\;          XQ. J Q J                      :         ;        k:lX  ');
   	outtextxy(10, 320,'   6Q : Q%%           \\Q  Q   J              ;'''''''''':.:;''''::.  :         k:lX  ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 340,'You are in a room, the heat is opressive. Your armour is warming up.');
 	Delay(5000);
 	outtextxy(10, 350,'You see the dragon!');
@@ -1017,11 +895,9 @@ begin
 	case (choice) of
 	#120, #88 : begin
 	        setcolor(red);
-	        //psvDebugScreenSetFgColor(COLOR_RED);
 			outtextxy(10, 410,'You run away wailing.');
 			outtextxy(10, 420,'You hear the princess call out, "Where are you going, knight!? Help me!"');
 			setcolor(white);
-			//psvDebugScreenSetFgColor(COLOR_WHITE);
 			Moveto(10, 430);
 			X := getX;
 			Y := getY;
@@ -1032,7 +908,6 @@ begin
 	        if (havesword <> 1) then
 	        begin
 			  setcolor(red);
-	          //psvDebugScreenSetFgColor(COLOR_RED);
 			  outtextxy(10, 410,'You lunge at the dragon.');
 		      Delay(5000);
 			  outtextxy(10, 420,'It snorts amused at the image of you desperately clawing at him with your measely iron sword.');
@@ -1041,7 +916,6 @@ begin
 			  Delay(5000);
 			  outtextxy(10, 440,'You are dead.');
 			  setcolor(white);
-			  //psvDebugScreenSetFgColor(COLOR_WHITE);
 			  Moveto(10, 450);
 			  X := getX;
 			  Y := getY;
@@ -1051,7 +925,6 @@ begin
 			else if (drankpotion <> 1) then
 			begin
 			  setcolor(red);
-			  //psvDebugScreenSetFgColor(COLOR_RED);
 			  outtextxy(10, 410,'You lunge at the dragon swinging the golden sword.');
 			  Delay(5000);
 			  outtextxy(10, 420,'But you just don''t have the strength to pierce his incredible scales.');
@@ -1060,7 +933,6 @@ begin
 			  Delay(5000);
 			  outtextxy(10, 440,'You are dead.');
 			  setcolor(white);
-			  //psvDebugScreenSetFgColor(COLOR_WHITE);
 			  Moveto(10, 450);
 			  X := getX;
 			  Y := getY;
@@ -1070,7 +942,6 @@ begin
 			else
 			begin
 			  setcolor(green);
-			  //psvDebugScreenSetFgColor(COLOR_GREEN);
 			  outtextxy(10, 410,'You lunge at the dragon swinging the golden sword with fervour.');
 			  Delay(5000);
 			  outtextxy(10, 420,'You drive your sword deep into the dragon''s chest, plunging it into it''s dark heart.');
@@ -1080,7 +951,6 @@ begin
 			  outtextxy(10, 440,'It snorts it''s final breath as life ebbs from it''s nostrils.');
 			  Delay(5000);
 			  setcolor(white);
-			  //psvDebugScreenSetFgColor(COLOR_WHITE);
 			  killedDragon := 1;
 			  Moveto(10, 450);
 			  X := getX;
@@ -1095,10 +965,6 @@ begin
   else
   begin
     setcolor(8);
-    //psvDebugScreenSetFgColor(COLOR_GREY);
-  	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 20,'                             _______               ______________      ___      _______');
 	outtextxy(10, 30,'                            |_|_____|/////////////|+-+-+-+-+-+-+-|\\\\\\\\|___|\\\\\\\\|_____|_|');
 	outtextxy(10, 40,'                            |____|__|/////////////|-+-+______+-+-|\\\\\\\\|_|_|\\\\\\\\|__|____|');
@@ -1120,8 +986,6 @@ begin
 	outtextxy(10, 200,'                            |____|__|//////                               |\\\\\\\\|__|____|');
 	outtextxy(10, 210,'                            |_|_____|/////                                 \\\\\\\\|_____|_|');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 230,'You are in a room with the carcass of a dead dragon.');
 	outtextxy(10, 240,'There is a door to the south and north.');
 	outtextxy(10, 250,'What do you do?');
@@ -1153,10 +1017,6 @@ begin
   if (haveflower <> 1) then
   begin
     setcolor(yellow);
-    //psvDebugScreenSetFgColor(COLOR_YELLOW);
-	writeln();
-	writeln();
-	writeln();
     outtextxy(10, 20,'                                                           %%%%%%%%     ');
     outtextxy(10, 30,'                                                          %%%%%%%%-(    ');
     outtextxy(10, 40,'                                                        _%%%%%%%%%%_/    ');
@@ -1177,23 +1037,18 @@ begin
     outtextxy(10, 190,'                                                         )|)|        ');
     outtextxy(10, 200,'                                                        ''-''-.\      ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 220,'You enter the room.');
 	Delay(5000);
 	outtextxy(10, 230,'Before you is the most beautiful woman you have ever seen!');
 	Delay(5000);
 	setcolor(yellow);
-	//psvDebugScreenSetFgColor(COLOR_YELLOW);
 	outtextxy(10, 240,'She looks upset.');
 	Delay(5000);
 	setcolor(red);
-	//psvDebugScreenSetFgColor(COLOR_RED);
 	outtextxy(10, 250,'"No flowers!? Not even a poem!?"');
 	Delay(5000);
 	outtextxy(10, 260,'Annoyed, she pushes you out of the room and huffs at the barred window.');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
 	Moveto(10, 270);
 	X := getX;
 	Y := getY;
@@ -1203,10 +1058,6 @@ begin
   else
   begin
     setcolor(cyan);
-    //psvDebugScreenSetFgColor(COLOR_CYAN);
-	writeln();
-	writeln();
-	writeln();
     outtextxy(10, 20,'                                                        ,-''.        ');
     outtextxy(10, 30,'                                                       ,@@o. )        ');
     outtextxy(10, 40,'                                                      (_      )        ');
@@ -1236,14 +1087,11 @@ begin
     outtextxy(10, 280,'                                               `-___-_                ___-''     ');
     outtextxy(10, 290,'                                                      `---___-_____--''      ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
-	writeln();
 	outtextxy(10, 310,'You enter the room.');
 	Delay(5000);
 	outtextxy(10, 320,'Before you is the most beautiful woman you have ever seen!');
 	Delay(5000);
 	setcolor(green);
-	//psvDebugScreenSetFgColor(COLOR_GREEN);
 	outtextxy(10, 330,'She runs toward you with her arms open!');
 	Delay(5000);
 	outtextxy(10, 340,'"My hero!!!"');
@@ -1252,7 +1100,6 @@ begin
 	Delay(5000);
 	outtextxy(10, 360,'"Get me out of here! I want to go home!"');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
 	Moveto(10, 370);
 	X := getX;
 	Y := getY;
@@ -1269,10 +1116,6 @@ begin
 	killedslug := 0;
 	haveflower := 0;
 	killedDragon := 0;
-	//savedprincess := 0;
-    writeln();
-	writeln();
-	writeln();
 	setcolor(yellow);
  	outtextxy(10,10,'                                                 ,     \    /      ,          ');
  	outtextxy(10,20,'                                                / \    )\__/(     / \            ');
@@ -1295,41 +1138,25 @@ begin
  	outtextxy(10,190,'                                          |/     `       //        ''     \|         ');
  	outtextxy(10,200,'                                          ''              V                ''         ');
 	setcolor(8); // 8 is grey but the fucking pascal compiler is stupid and wont accept "grey"
- 	//psvDebugScreenSetFgColor(COLOR_GREY);
  	outtextxy(10,210,'                                     A simple choose your own adventure text game                         ');
  	outtextxy(10,220,'                                   by josh_axey  ported to windows by IllusionMan1212                          ');
- 	writeln('                                                                                                ');
- 	writeln('                                                                                                ');
 	setcolor(white);
- 	//psvDebugScreenSetFgColor(COLOR_WHITE);
- 	outtextxy(10,230,'                                          PRESS [START] TO BEGIN YOUR JOURNEY                           ');
+ 	outtextxy(10,250,'                                          PRESS [START] TO BEGIN YOUR JOURNEY                           ');
 	choice := ReadKey;
 	if (choice = #13) then
 	begin
-    //readkey();
 	cleardevice;
-	writeln();
-	writeln();
-	writeln();
 	outtextxy(10, 10,'A herald has come to deliver news from the King to all of his knights.');
-	writeln();
 	Delay(5000);
 	outtextxy(10, 30,'The princess and future queen, April, has been kidnapped by a dragon.');
-	writeln();
 	Delay(5000);
 	outtextxy(10, 50,'The dragon has stolen her away to his cave in the ruins of an old fortress.');
-	writeln();
 	Delay(5000);
 	outtextxy(10, 70,'You have heard tales of her beauty and wit, and hope not only to save her but to ask her hand in marriage.');
-	writeln();
 	Delay(5000);
 	outtextxy(10, 90,'You bravely accept the King''s quest and head off into the dark forest, towards the dragon''s lair.');
-	writeln();
 	Delay(5000);
-	writeln();
-	writeln();
 	setcolor(8);
-	//psvDebugScreenSetFgColor(COLOR_GREY);
 	outtextxy(10, 100,'                                                                         .');
 	outtextxy(10, 110,'                                                              .         ;  ');
 	outtextxy(10, 120,'                                 .              .              ;%%     ;;   ');
@@ -1359,7 +1186,6 @@ begin
 	outtextxy(10, 360,'                                              ;%%@@@@%%%%:;;;. ');
 	outtextxy(10, 370,'                                          ...;%%@@@@@%%%%:;;;;,..   ');
 	setcolor(white);
-	//psvDebugScreenSetFgColor(COLOR_WHITE);
 	Moveto(10, 380);
 	X := getX;
 	Y := getY;
