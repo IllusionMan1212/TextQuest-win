@@ -30,7 +30,7 @@ procedure savedprincess1;
 begin
         cleardevice;
 		setcolor(white);
-  		outtextxy(10, 20,'                                      ///........./|\\.........\\\  ');
+  		outtextxy(10, 20,'                                      ///........./|\.........\\\  ');
   		outtextxy(10, 30,'                                     ////    :    |||    :    \\\\ ');
   		outtextxy(10, 40,'                                     \\'''''''''''':''''''''|||'''''''':''''''''''''//  ');
   		outtextxy(10, 50,'                                      \\`.    .   |||   .    .''//  ');
@@ -189,8 +189,8 @@ begin
 	outtextxy(10, 240,'You hear the princess yelling, "Help me! Help me!"');
 	outtextxy(10, 250,'You hear the bellow of the dragon.');
 	outtextxy(10, 260,'What do you do?');
-	outtextxy(10, 270,'X - Enter the lair.');
-	outtextxy(10, 280,'O - Run away.');
+	outtextxy(10, 270,'W - Enter the lair.');
+	outtextxy(10, 280,'S - Run away.');
 	outtextxy(10, 290,'? ');
 	Moveto(20,290);
 	X := getX;
@@ -198,16 +198,16 @@ begin
 	repeat
 	choice := ReadKey;
 	case (choice) of
-	#111,#79 : begin
-	        wait;
-	        coward;
-		  end;
-	#120,#88 : begin
+	#119,#87 : begin
 	        wait;
 	        location2;
 		  end;
+	#115,#83 : begin
+	        wait;
+	        coward;
+		  end;
 	end;
-	until (choice = #111) or (choice = #120) or (choice = #79) or (choice = #88);
+	until (choice = #119) or (choice = #115) or (choice = #87) or (choice = #83);
 end;
 
 procedure location2;
@@ -239,9 +239,9 @@ begin
 	outtextxy(10, 240,'The heat is opressive and the stench of brimstone burns your nostrils.');
 	outtextxy(10, 250,'You see a door leading west, a door leading east, and a door leading south.');
 	outtextxy(10, 260,'What do you do?');
-	outtextxy(10, 270,'X - Go east.');
-	outtextxy(10, 280,'O - Go west.');
-	outtextxy(10, 290,'^ - Go south.');
+	outtextxy(10, 270,'E - Go east.');
+	outtextxy(10, 280,'W - Go west.');
+	outtextxy(10, 290,'S - Go south.');
 	outtextxy(10, 300,'? ');
 	Moveto(20,300);
 	X := getX;
@@ -249,11 +249,11 @@ begin
 	repeat
 	choice := ReadKey;
 	case (choice) of
-	#120, #88 : begin
+	#101, #69 : begin
 	        wait;
 	        location4;
 		  end;
-	#111, #79 : begin
+	#119, #87 : begin
 	        wait;
 	        location3;
 	      end;
@@ -262,7 +262,7 @@ begin
 	        location1;
 		  end;
 	end;
-	until (choice = #111) or (choice = #120) or (choice = #79) or (choice = #88) or (choice = #115) or (choice = #83);
+	until (choice = #101) or (choice = #119) or (choice = #115) or (choice = #69) or (choice = #87) or (choice = #83);
     end;
 
 
@@ -323,9 +323,9 @@ begin
 	outtextxy(10, 330,'You are standing in a room covered in spider webs.');
 	outtextxy(10, 340,'There are  doors leading west, north, and east.');
 	outtextxy(10, 350,'What do you do?');
-	outtextxy(10, 360,'X - Go east.');
-	outtextxy(10, 370,'O - Go north.');
-	outtextxy(10, 380,'^ - Go west.');
+	outtextxy(10, 360,'E - Go east.');
+	outtextxy(10, 370,'N - Go north.');
+	outtextxy(10, 380,'W - Go west.');
 	outtextxy(10, 390,'? ');
 	Moveto(20, 390);
 	X := getX;
@@ -333,20 +333,20 @@ begin
 	repeat
 	choice := ReadKey;
 	case (choice) of
-	#120, #88 : begin
+	#101, #69 : begin
 	        wait;
 	        location5;
 		  end;
-	#111, #79 : begin
+	#110, #78 : begin
 	        wait;
 	        location8;
 		  end;
-	#115, #83 : begin
+	#119, #87 : begin
 	        wait;
 	        location2;
 		  end;
 	end;
-	until (choice = #111) or (choice = #79) or (choice = #120) or (choice = #88) or (choice = #115) or (choice = #83);
+	until (choice = #101) or (choice = #69) or (choice = #110) or (choice = #78) or (choice = #119) or (choice = #87);
 end;
 
 procedure location5;
@@ -413,7 +413,7 @@ begin
   setcolor(white);
   outtextxy(10, 400,'There is a door to the west.');
   outtextxy(10, 410,'What do you do?');
-  outtextxy(10, 420,'X - Go west.');
+  outtextxy(10, 420,'W - Go west.');
   if (drankpotion <> 1) then
   begin
 	outtextxy(10, 430,'O - Drink the potion.');
@@ -432,7 +432,7 @@ begin
   repeat
   choice := ReadKey;
   case (choice) of
-  #120, #88 : begin
+  #119, #87 : begin
           wait;
           location4;
 		end;
@@ -456,16 +456,16 @@ begin
 		   else 
 		   begin
 			 choice := Readkey;
-			 if (choice = #120) or (choice = #88) then
+			 if (choice = #119) or (choice = #87) then
 			 begin
 			 wait;
 			 location4
 			 end;
 		   end;
-		   until (choice = #120) or (choice = #88);
+		   until (choice = #119) or (choice = #87);
         end;
   end;
-  until (choice = #111) or (choice = #79) or (choice = #120) or (choice = #88);
+  until (choice = #111) or (choice = #79) or (choice = #119) or (choice = #87);
 end;
 
 procedure location6;
@@ -513,7 +513,7 @@ begin
   setcolor(white);
   outtextxy(10, 370,'There is a door to the east.');
   outtextxy(10, 380,'What do you do?');
-  outtextxy(10, 390,'X - Go east.');
+  outtextxy(10, 390,'E - Go east.');
   if (havesword <> 1) then
     begin
       outtextxy(10, 400,'O - Take the sword.');
@@ -529,7 +529,7 @@ begin
   repeat
   choice := ReadKey;
   case (choice) of
-  #120, #88 : begin
+  #101, #69 : begin
 		  Moveto(20, 400);
 		  X := getX;
 		  Y := getY;
@@ -553,16 +553,16 @@ begin
 			else
 			begin
 			  choice := ReadKey;
-			  if (choice = #120) or (choice = #88) then
+			  if (choice = #101) or (choice = #69) then
 			  begin
 			  wait;
 			  location7;
 			  end;
 			end;
-			until (choice = #120) or (choice = #88);
+			until (choice = #101) or (choice = #69);
         end;
 	end;
-	until (choice = #120) or (choice = #88) or (choice = #111) or (choice = #79);
+	until (choice = #101) or (choice = #69) or (choice = #111) or (choice = #79);
 end;
 
 procedure location7;
@@ -651,8 +651,8 @@ begin
 	outtextxy(10, 230,'You are in a room with spider guts smeared on the floor.');
 	outtextxy(10, 240,'There is a door to the west and to the east.');
 	outtextxy(10, 250,'What do you do?');
-	outtextxy(10, 260,'X - Go west.');
-	outtextxy(10, 270,'O - Go east.');
+	outtextxy(10, 260,'W - Go west.');
+	outtextxy(10, 270,'E - Go east.');
 	outtextxy(10, 280,'? ');
 	Moveto(20, 280);
 	X := getX;
@@ -660,16 +660,16 @@ begin
 	repeat
 	choice := ReadKey;
 	case (choice) of
-	#120, #88 : begin
+	#119, #87 : begin
 	        wait;
 	        location6;
 		  end;
-	#111, #79 : begin
+	#101, #69 : begin
 	        wait;
 	        location8;
 		  end;
 	end;
-	until (choice = #120) or (choice = #88) or (choice = #111) or (choice = #79);
+	until (choice = #119) or (choice = #87) or (choice = #101) or (choice = #69);
   end;
 end;
 
@@ -701,10 +701,10 @@ begin
   outtextxy(10, 230,'You are in an empty room. The walls feel as though they are emanating heat.');
   outtextxy(10, 240,'There is a  door to the west, north, east, and south.');
   outtextxy(10, 250,'What do you do?');
-  outtextxy(10, 260,'X - Go west.');
-  outtextxy(10, 270,'O - Go north.');
-  outtextxy(10, 280,'^ - Go east.');
-  outtextxy(10, 290,'[] - Go south.');
+  outtextxy(10, 260,'W - Go west.');
+  outtextxy(10, 270,'N - Go north.');
+  outtextxy(10, 280,'E - Go east.');
+  outtextxy(10, 290,'S - Go south.');
   outtextxy(10, 300,'? ');
   Moveto(20, 300);
   X := getX;
@@ -712,24 +712,24 @@ begin
   repeat
   choice := ReadKey;
   case (choice) of
-  #120, #88 : begin
+  #119, #87 : begin
           wait;
           location7;
 		end;
-  #111, #79 : begin
+  #110, #78 : begin
           wait;
           location10;
 		end;
-  #115, #83 : begin
+  #101, #69 : begin
           wait;
           location9;
 		end;
-  #122, #90 : begin
+  #115, #83 : begin
           wait;
           location4;
 		end;
   end;
-  until (choice = #120) or (choice = #88) or (choice = #111) or (choice = #79) or (choice = #115) or (choice = #83) or (choice = #122) or (choice = #90);
+  until (choice = #119) or (choice = #87) or (choice = #110) or (choice = #78) or (choice = #101) or (choice = #69) or (choice = #115) or (choice = #83);
 end;
 
 procedure location9;
@@ -789,7 +789,7 @@ begin
   setcolor(white);
   outtextxy(10, 450,'There is a door to the west.');
   outtextxy(10, 460,'What do you do?');
-  outtextxy(10, 470,'X - Go west.');
+  outtextxy(10, 470,'W - Go west.');
   if (haveflower <> 1) then
   begin
     outtextxy(10, 480,'O - Pick the flower');
@@ -808,7 +808,7 @@ begin
   repeat
   choice := ReadKey;
   case (choice) of
-  #120, #88 : begin
+  #119, #87 : begin
           wait;
           location8;
 		end;
@@ -830,16 +830,16 @@ begin
 		  else
 		  begin
 			choice := ReadKey;
-			if (choice = #120) or (choice = #88) then
+			if (choice = #119) or (choice = #87) then
 			begin
 			wait;
 			location8;
 			end;
 		  end;
-		until (choice = #120) or (choice = #88);
+		until (choice = #119) or (choice = #87);
   	end;
   end;
-  until (choice = #120) or (choice = #88) or (choice = #111) or (choice = #79);
+  until (choice = #119) or (choice = #87) or (choice = #111) or (choice = #79);
 end;
 
 procedure location10;
@@ -989,8 +989,8 @@ begin
 	outtextxy(10, 230,'You are in a room with the carcass of a dead dragon.');
 	outtextxy(10, 240,'There is a door to the south and north.');
 	outtextxy(10, 250,'What do you do?');
-	outtextxy(10, 260,'X - Go north.');
-	outtextxy(10, 270,'O - Go south.');
+	outtextxy(10, 260,'N - Go north.');
+	outtextxy(10, 270,'S - Go south.');
 	outtextxy(10, 280,'? ');
 	Moveto(20, 280);
 	X := getX;
@@ -998,16 +998,16 @@ begin
 	repeat
 	choice := ReadKey;
 	case (choice) of
-	#120, #88 : begin
+	#110, #78 : begin
 	        wait;
 	        location11;
 		  end;
-	#111, #79 : begin
+	#115, #83 : begin
 	        wait;
 	        location8;
 		  end;
 	end;
-	until (choice = #120) or (choice = #88) or (choice = #111) or (choice = #79);
+	until (choice = #110) or (choice = #78) or (choice = #115) or (choice = #83);
   end;
 end;
 
@@ -1141,8 +1141,10 @@ begin
  	outtextxy(10,210,'                                     A simple choose your own adventure text game                         ');
  	outtextxy(10,220,'                                   by josh_axey  ported to windows by IllusionMan1212                          ');
 	setcolor(white);
- 	outtextxy(10,250,'                                          PRESS [START] TO BEGIN YOUR JOURNEY                           ');
+ 	outtextxy(10,250,'                                          PRESS [Enter] TO BEGIN YOUR JOURNEY                           ');
+	repeat
 	choice := ReadKey;
+	until (choice = #13);
 	if (choice = #13) then
 	begin
 	cleardevice;
